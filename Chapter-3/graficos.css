@@ -1,0 +1,17 @@
+#grafico {
+  border: thin solid black;
+}
+.barra {
+  stroke: black;
+}
+.rotulo {
+  text-anchor: middle;
+}
+#eixoX text {
+  font-size: 120%;
+  text-anchor: end;
+  transform: translate(-8px, 2px) rotate(-45deg);
+}
+#eixoY text {
+  font-size: 120%;
+}

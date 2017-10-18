@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>D3-Chapter-2</title>
+    <script type="text/javascript" src="../lib/d3.min.js"></script>
+    <link rel="stylesheet" href="graficos.css" />
+    <script type="text/javascript" src="graficos.js"></script>
+    <script>
+      function executa(){
+        var dados = [156, 273, 120, 115, 44, 260, 133];
+        grafico({
+          seletor: '#grafico',
+          dados: dados,
+          altura: 400,
+          largura: 600
+        });
+      }
+    </script>
+  </head>
+  <body onload="executa()">
+
+    <svg id="grafico"></svg>
+  </body>
+</html>

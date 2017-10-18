@@ -1,0 +1,10 @@
+#grafico {
+  border: thin solid black;
+}
+.barra {
+  fill: lightblue;
+  stroke: black;
+}
+.rotulo {
+  text-anchor: end;
+}

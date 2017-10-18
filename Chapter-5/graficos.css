@@ -1,0 +1,42 @@
+h1 {
+  margin-bottom: 0;
+}
+#grafico {
+  shape-rendering: crispEdges;
+}
+.barra {
+  stroke: black;
+}
+.rotulo {
+  text-anchor: middle;
+}
+.tituloeixo {
+  font-family: Helvetica, Arial, sans-serif;
+}
+#eixoX text {
+  font-size: 120%;
+  text-anchor: end;
+  transform: translate(-8px, 2px) rotate(-45deg);
+}
+#eixoY text {
+  font-size: 120%;
+}
+#grade path {
+  display: none;
+}
+#grade line {
+  stroke: #AAA;
+  stroke-dasharray: 2,2;
+}
+.linha {
+  fill: none;
+  stroke-width: 3px;
+}
+.caixalegenda {
+  stroke: black;
+  stroke-width: 1;
+}
+.textolegenda {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 80%;
+}

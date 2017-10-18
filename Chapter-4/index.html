@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8"/>
+  <title>D3JS</title>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <link href="graficos.css" rel="stylesheet" />
+  <script src="graficos.js"></script>
+  <script>
+    var p;
+    var dados = [
+      {chave: 'Frango', valor: 56},
+      {chave: 'Carne', valor: 73},
+      {chave: 'Vegetariano', valor: 20},
+      {chave: 'Queijo', valor: 115},
+      {chave: 'Goiabada', valor: 44},
+      {chave: 'Banana', valor: 60},
+      {chave: 'Calabresa', valor: 33}
+    ];
+
+    function executa() {
+      p = new GraficoDeBarras({
+        seletor: '#grafico',
+        dados: dados,
+        altura: 400,
+        largura: 600,
+        tituloX: 'Tipos de pastéis',
+        tituloY: 'Quantidade vendida',
+        callback: clicado
+      });
+    }
+
+    function crescente() {
+      dados.sort((a,b)=>a.valor-b.valor);
+      p.atualize(dados);
+    }
+
+    function decrescente() {
+      dados.sort((a,b)=>b.valor-a.valor);
+      p.atualize(dados);
+    }
+
+    function alfabetica() {
+      dados.sort((a,b)=>a.chave>b.chave?1:0);
+      p.atualize(dados);
+    }
+
+    function clicado(d) {
+      document.getElementById('chaveSelecionada').innerHTML = d.chave;
+      document.getElementById('valorSelecionado').innerHTML = d.valor;
+    }
+  </script>
+</head>
+<body onload="executa()">
+  <h1>Vendas médias diárias</h1>
+  <svg id="grafico"></svg>
+  <p>
+    <button onclick="crescente()">Ordem crescente</button>
+    <button onclick="decrescente()">Ordem decrescente</button>
+    <button onclick="alfabetica()">Ordem alfabética</button>
+  </p>
+  <h3>Seleção</h3><p>Chave: <span id="chaveSelecionada"></span><br/>
+  Valor: <span id="valorSelecionado"></span></p>
+</body>
+</html>
